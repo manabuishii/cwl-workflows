@@ -48,6 +48,6 @@ cwltool calculate_mean.cwl job.json --inputdatafile input1.txt --rscritfile calc
 # Run with docker
 
 ```
-docker run -u 1000:1000 --rm  -w /work -v $PWD:/work r-base:3.4.4 R CMD BATCH --slave --vanilla /work/calculate_mean.R
+docker run -u 1000:1000 --rm  -w /work -v $PWD:/work r-base:3.4.4 R --slave --no-restore  --file=/work/calculate_mean.R --args /work/input1.txt
 ```
 
