@@ -6,20 +6,32 @@ requirements:
   DockerRequirement:
     dockerPull: r-base:3.4.4
 inputs:
-  file1:
+  inputdatafile:
     type: File
     label: Input File
     doc: "Input file that has values"
-    inputBinding: {position: 2}
-  file2:
+    inputBinding:
+      position: 13
+  rscriptfile:
     type: File
     label: Script File
     doc: "R script file"
-    inputBinding: {position: 1}
+    default:
+      type: File
+      location: "calculate_mean.R"
+    inputBinding:
+      position: 11
+      prefix: --file=
+      separate: false
 outputs:
   output_file:
     type: File
     outputBinding: {glob: output.txt}
 baseCommand: R
-arguments: ["CMD", "BATCH", "--slave", "--vanilla","--args"] 
+arguments:
+  - "--slave"
+  - valueFrom: "--no-restore"
+    position: 10
+  - valueFrom: "--args"
+    position: 12
 stdout: output.txt

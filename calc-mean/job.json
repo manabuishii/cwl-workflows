@@ -1,9 +1,9 @@
 {
-  "file1": {
+  "inputdatafile": {
     "class": "File",
     "location": "input1.txt"
   },
-  "file2": {
+  "rscriptfile": {
     "class": "File",
     "location": "calculate_mean.R"
   }
