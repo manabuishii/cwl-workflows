@@ -19,6 +19,7 @@ inputs:
     default:
       type: File
       location: "calculate_mean.R"
+      class: File
     inputBinding:
       position: 11
       prefix: --file=
