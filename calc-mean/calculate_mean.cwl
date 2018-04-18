@@ -17,7 +17,6 @@ inputs:
     label: Script File
     doc: "R script file"
     default:
-      type: File
       location: "calculate_mean.R"
       class: File
     inputBinding:
