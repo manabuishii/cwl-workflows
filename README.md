@@ -2,7 +2,7 @@
 
 # Workflows
 
-- [Calculate Mean](./calculate-mean)
+- [Calculate Mean](./calc-mean)
 
 ## How to setup new script
 
